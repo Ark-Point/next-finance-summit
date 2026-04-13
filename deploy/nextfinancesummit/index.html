@@ -166,8 +166,9 @@
       text-align: center;
     }
     .sponsor-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(212,178,120,0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(212,178,120,0.2);
+      border-color: rgba(212,178,120,0.35);
     }
     .sponsor-logo {
       height: 38px;
@@ -180,14 +181,25 @@
       font-weight: 600;
       color: #333;
       font-size: 0.78rem;
-      margin-bottom: 0;
+      margin-bottom: 6px;
       line-height: 1.3;
     }
-    .sponsor-desc {
-      color: #999;
+    .sponsor-cta {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: #aaa;
+      transition: color 0.25s;
+      margin: 0;
+    }
+    .sponsor-cta .x-icon {
+      font-weight: 700;
       font-size: 0.72rem;
-      line-height: 1.4;
-      margin: 2px 0 0;
+    }
+    .sponsor-item:hover .sponsor-cta {
+      color: #1d9bf0;
     }
 
     /* ── Session Cards ── */
@@ -375,34 +387,42 @@
       <a class="sponsor-item" href="https://x.com/magic_labs" target="_blank" style="text-decoration:none;">
         <img class="sponsor-logo" src="logos/magic-labs.png" alt="Magic Labs">
         <p class="sponsor-name">Magic Labs</p>
+        <p class="sponsor-cta"><span class="x-icon">𝕏</span> Follow →</p>
       </a>
       <a class="sponsor-item" href="https://x.com/movement_xyz" target="_blank" style="text-decoration:none;">
         <img class="sponsor-logo" src="logos/movement.png" alt="Movement Industries">
         <p class="sponsor-name">Movement</p>
+        <p class="sponsor-cta"><span class="x-icon">𝕏</span> Follow →</p>
       </a>
       <a class="sponsor-item" href="https://x.com/injective" target="_blank" style="text-decoration:none;">
         <img class="sponsor-logo" src="logos/injective.png" alt="Injective">
         <p class="sponsor-name">Injective</p>
+        <p class="sponsor-cta"><span class="x-icon">𝕏</span> Follow →</p>
       </a>
       <a class="sponsor-item" href="https://x.com/squidrouter" target="_blank" style="text-decoration:none;">
         <img class="sponsor-logo" src="logos/squid.png" alt="Squid">
         <p class="sponsor-name">Squid</p>
+        <p class="sponsor-cta"><span class="x-icon">𝕏</span> Follow →</p>
       </a>
       <a class="sponsor-item" href="https://x.com/GoKiteAI" target="_blank" style="text-decoration:none;">
         <img class="sponsor-logo" src="logos/kite-ai.png" alt="Kite AI">
         <p class="sponsor-name">Kite AI</p>
+        <p class="sponsor-cta"><span class="x-icon">𝕏</span> Follow →</p>
       </a>
       <a class="sponsor-item" href="https://x.com/plumenetwork" target="_blank" style="text-decoration:none;">
         <img class="sponsor-logo" src="logos/plume.png" alt="Plume">
         <p class="sponsor-name">Plume</p>
+        <p class="sponsor-cta"><span class="x-icon">𝕏</span> Follow →</p>
       </a>
       <a class="sponsor-item" href="https://x.com/jito_sol" target="_blank" style="text-decoration:none;">
         <img class="sponsor-logo" src="logos/jito.png" alt="Jito">
         <p class="sponsor-name">Jito</p>
+        <p class="sponsor-cta"><span class="x-icon">𝕏</span> Follow →</p>
       </a>
       <a class="sponsor-item" href="https://x.com/redstone_defi" target="_blank" style="text-decoration:none;">
-        <img class="sponsor-logo" src="logos/redstone.png" alt="RedStone">
+        <img class="sponsor-logo" src="logos/redstone.png" alt="RedStone" style="height:52px;">
         <p class="sponsor-name">RedStone</p>
+        <p class="sponsor-cta"><span class="x-icon">𝕏</span> Follow →</p>
       </a>
     </div>
   </section>
