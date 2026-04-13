@@ -151,30 +151,43 @@
     /* ── Sponsor Grid ── */
     .sponsor-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
     }
     .sponsor-item {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 10px;
-      padding: 20px 22px;
-      transition: border-color 0.25s;
+      background: #ffffff;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 18px 14px 14px;
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     .sponsor-item:hover {
-      border-color: rgba(212,178,120,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212,178,120,0.15);
+    }
+    .sponsor-logo {
+      height: 38px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      margin-bottom: 10px;
     }
     .sponsor-name {
       font-weight: 600;
-      color: var(--warm);
-      font-size: 1rem;
-      margin-bottom: 4px;
+      color: #333;
+      font-size: 0.78rem;
+      margin-bottom: 0;
+      line-height: 1.3;
     }
     .sponsor-desc {
-      color: var(--dim);
-      font-size: 0.88rem;
-      line-height: 1.6;
-      margin: 0;
+      color: #999;
+      font-size: 0.72rem;
+      line-height: 1.4;
+      margin: 2px 0 0;
     }
 
     /* ── Session Cards ── */
@@ -306,7 +319,7 @@
       section { padding: 36px 0; }
       h1 { font-size: 1.8rem; }
       h2 { font-size: 1.35rem; }
-      .sponsor-grid { grid-template-columns: 1fr; }
+      .sponsor-grid { grid-template-columns: repeat(2, 1fr); }
       .nav-bar { gap: 8px; }
       .nav-bar a { font-size: 0.78rem; padding: 5px 11px; }
     }
@@ -360,36 +373,36 @@
 
     <div class="sponsor-grid">
       <a class="sponsor-item" href="https://x.com/magic_labs" target="_blank" style="text-decoration:none;">
+        <img class="sponsor-logo" src="logos/magic-labs.png" alt="Magic Labs">
         <p class="sponsor-name">Magic Labs</p>
-        <p class="sponsor-desc">@magic_labs</p>
       </a>
       <a class="sponsor-item" href="https://x.com/movement_xyz" target="_blank" style="text-decoration:none;">
-        <p class="sponsor-name">Movement Industries</p>
-        <p class="sponsor-desc">@movement_xyz</p>
+        <img class="sponsor-logo" src="logos/movement.png" alt="Movement Industries">
+        <p class="sponsor-name">Movement</p>
       </a>
       <a class="sponsor-item" href="https://x.com/injective" target="_blank" style="text-decoration:none;">
+        <img class="sponsor-logo" src="logos/injective.png" alt="Injective">
         <p class="sponsor-name">Injective</p>
-        <p class="sponsor-desc">@injective</p>
       </a>
       <a class="sponsor-item" href="https://x.com/squidrouter" target="_blank" style="text-decoration:none;">
+        <img class="sponsor-logo" src="logos/squid.png" alt="Squid">
         <p class="sponsor-name">Squid</p>
-        <p class="sponsor-desc">@squidrouter</p>
       </a>
       <a class="sponsor-item" href="https://x.com/GoKiteAI" target="_blank" style="text-decoration:none;">
+        <img class="sponsor-logo" src="logos/kite-ai.png" alt="Kite AI">
         <p class="sponsor-name">Kite AI</p>
-        <p class="sponsor-desc">@GoKiteAI</p>
       </a>
       <a class="sponsor-item" href="https://x.com/plumenetwork" target="_blank" style="text-decoration:none;">
+        <img class="sponsor-logo" src="logos/plume.png" alt="Plume">
         <p class="sponsor-name">Plume</p>
-        <p class="sponsor-desc">@plumenetwork</p>
       </a>
       <a class="sponsor-item" href="https://x.com/jito_sol" target="_blank" style="text-decoration:none;">
+        <img class="sponsor-logo" src="logos/jito.png" alt="Jito">
         <p class="sponsor-name">Jito</p>
-        <p class="sponsor-desc">@jito_sol</p>
       </a>
       <a class="sponsor-item" href="https://x.com/redstone_defi" target="_blank" style="text-decoration:none;">
+        <img class="sponsor-logo" src="logos/redstone.png" alt="RedStone">
         <p class="sponsor-name">RedStone</p>
-        <p class="sponsor-desc">@redstone_defi</p>
       </a>
     </div>
   </section>
@@ -408,32 +421,45 @@
 
     <div class="session-block">
       <div class="session-header">
-        <span class="session-tag tag-keynote">Keynote</span>
-        <h3 style="margin:0;">[Keynote 1 제목] — [연사명], [소속]</h3>
+        <span class="session-tag tag-keynote">Keynote 1</span>
+        <h3 style="margin:0;">AI 시대의 새로운 Payment</h3>
       </div>
+      <p class="caption">홍성욱 — NH투자증권</p>
       <div class="session-summary">
-        <p><!-- TODO: 발표 핵심 Summary -->[발표 핵심 요약 2-3문장]</p>
+        <p>[발표 핵심 요약]</p>
+      </div>
+    </div>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-keynote">Keynote 2</span>
+        <h3 style="margin:0;">행동하는 AI를 위한 인프라 구축</h3>
+      </div>
+      <p class="caption">Sonia — Kite AI</p>
+      <div class="session-summary">
+        <p>[발표 핵심 요약]</p>
+      </div>
+    </div>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-keynote">Keynote 3</span>
+        <h3 style="margin:0;">기관 대상 서비스, 결제 이상의 가치가 필요한 이유</h3>
+      </div>
+      <p class="caption">Sean — Magic Labs</p>
+      <div class="session-summary">
+        <p>[발표 핵심 요약]</p>
       </div>
     </div>
 
     <div class="session-block">
       <div class="session-header">
         <span class="session-tag tag-panel">Panel</span>
-        <h3 style="margin:0;">[Panel 1 제목]</h3>
+        <h3 style="margin:0;">K-금융의 미래 : 원화 스테이블코인 임팩트</h3>
       </div>
-      <p class="caption">패널: [패널리스트 이름들]</p>
+      <p class="caption">한승훈 (우리은행) · 류춘 (헥토월렛원) · 박기범 (코인원) · 이언호 (법무법인 한영)</p>
       <div class="session-summary">
-        <p><!-- TODO: 패널 핵심 Summary -->[패널 주요 논의 요약]</p>
-      </div>
-    </div>
-
-    <div class="session-block">
-      <div class="session-header">
-        <span class="session-tag tag-keynote">Keynote</span>
-        <h3 style="margin:0;">[Keynote 2 제목] — [연사명], [소속]</h3>
-      </div>
-      <div class="session-summary">
-        <p>[발표 핵심 요약 2-3문장]</p>
+        <p>[패널 주요 논의 요약]</p>
       </div>
     </div>
 
@@ -446,32 +472,56 @@
 
     <div class="session-block">
       <div class="session-header">
-        <span class="session-tag tag-keynote">Keynote</span>
-        <h3 style="margin:0;">[Keynote 3 제목] — [연사명], [소속]</h3>
+        <span class="session-tag tag-keynote">Keynote 4</span>
+        <h3 style="margin:0;">KGLD 발행 전략과 이후 STO 진출 전략</h3>
       </div>
+      <p class="caption">이상윤 — KorDA &amp; 아이티센 크레더</p>
       <div class="session-summary">
-        <p>[발표 핵심 요약 2-3문장]</p>
+        <p>[발표 핵심 요약]</p>
+      </div>
+    </div>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-keynote">Keynote 5</span>
+        <h3 style="margin:0;">RWA 기반 온체인 글로벌 금융 접근성 확장</h3>
+      </div>
+      <p class="caption">Fig — Squid</p>
+      <div class="session-summary">
+        <p>[발표 핵심 요약]</p>
+      </div>
+    </div>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-keynote">Keynote 6</span>
+        <h3 style="margin:0;">자산별 RWA 발행 현황과 전략</h3>
+      </div>
+      <p class="caption">Andrew — Injective</p>
+      <div class="session-summary">
+        <p>[발표 핵심 요약]</p>
+      </div>
+    </div>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-keynote">Keynote 7</span>
+        <h3 style="margin:0;">금융과 토큰화 — 3인 3색</h3>
+      </div>
+      <p class="caption">신년기 — 한화자산운용</p>
+      <div class="session-summary">
+        <p>[발표 핵심 요약]</p>
       </div>
     </div>
 
     <div class="session-block">
       <div class="session-header">
         <span class="session-tag tag-panel">Panel</span>
-        <h3 style="margin:0;">[Panel 2 제목]</h3>
+        <h3 style="margin:0;">RWA, STO</h3>
       </div>
-      <p class="caption">패널: [패널리스트 이름들]</p>
+      <p class="caption">Magic Labs · Movement · Injective · Jito (Moderator)</p>
       <div class="session-summary">
         <p>[패널 주요 논의 요약]</p>
-      </div>
-    </div>
-
-    <div class="session-block">
-      <div class="session-header">
-        <span class="session-tag tag-keynote">Keynote</span>
-        <h3 style="margin:0;">[Keynote 4 제목] — [연사명], [소속]</h3>
-      </div>
-      <div class="session-summary">
-        <p>[발표 핵심 요약 2-3문장]</p>
       </div>
     </div>
   </section>
