@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUIDL ASIA: Next Finance Summit — VIP 점심 RSVP</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --surface:  #0b0e17;
+      --warm:     #f5f1eb;   /* 주요 텍스트 — 밝은 크림화이트 */
+      --ink:      #ddd8d0;   /* 본문 — 충분히 밝음 */
+      --dim:      #b8b3ab;   /* 보조 텍스트 */
+      --muted:    #8e8a84;   /* 레이블·캡션 — 최소 가독성 보장 */
+      --accent:   #4dbfed;
+      --gold:     #d4b278;
+      --gold-dim: rgba(212,178,120,0.18);
+      --cyan-dim: rgba(77,191,237,0.13);
+      --red-dim:  rgba(239,68,68,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;           /* 기본 폰트 사이즈 업 */
+      line-height: 1.7;
+      background: var(--surface);
+      color: var(--ink);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .serif { font-family: 'Cormorant Garamond', serif; }
+
+    /* ─── Dividers ─── */
+    .rule {
+      height: 1px; border: none;
+      background: linear-gradient(to right, transparent, rgba(77,191,237,0.3), transparent);
+    }
+    .rule-gold {
+      height: 1px; border: none;
+      background: linear-gradient(to right, transparent, rgba(212,178,120,0.4), transparent);
+    }
+
+    /* ─── Animations ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fu { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; }
+    .d1 { animation-delay: 0.05s; }
+    .d2 { animation-delay: 0.15s; }
+    .d3 { animation-delay: 0.25s; }
+    .d4 { animation-delay: 0.35s; }
+    .d5 { animation-delay: 0.45s; }
+
+    /* ─── Layout ─── */
+    .page { max-width: 660px; margin: 0 auto; padding: 72px 28px 80px; }
+
+    /* ─── Header ─── */
+    .header { text-align: center; margin-bottom: 56px; }
+    .eyebrow {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.75rem, 7vw, 4.25rem);
+      font-weight: 300;
+      color: var(--warm);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .title em { font-style: italic; font-weight: 400; }
+    .subtitle {
+      font-size: 1.0625rem;
+      font-weight: 400;
+      color: var(--dim);
+    }
+
+    /* ─── VIP badge ─── */
+    .vip-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid rgba(212,178,120,0.35);
+      padding: 16px 28px;
+      margin: 0 auto 48px;
+    }
+    .vip-star  { color: var(--gold); font-size: 1.2rem; }
+    .vip-title { color: var(--warm); font-size: 1.0625rem; font-weight: 500; }
+    .vip-time  { color: var(--dim);  font-size: 0.9375rem; margin-top: 3px; }
+
+    /* ─── Notice ─── */
+    .notice {
+      border-left: 3px solid rgba(212,178,120,0.55);
+      padding-left: 20px;
+      margin-bottom: 44px;
+    }
+    .notice-head {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .notice-body {
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+    .notice-body strong { color: var(--warm); font-weight: 700; }
+    .notice-contact { color: var(--dim); font-size: 0.9375rem; line-height: 1.6; }
+    .notice-contact a { color: var(--accent); text-decoration: none; }
+    .notice-contact a:hover { text-decoration: underline; }
+
+    /* ─── Venue ─── */
+    .section-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .venue-row {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .venue-key        { color: var(--muted); min-width: 48px; }
+    .venue-val        { color: var(--ink); }
+    .venue-val.bright { color: var(--warm); font-weight: 500; }
+    .venue-guide {
+      margin-top: 16px;
+      padding-top: 16px;
+      color: var(--dim);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .venue-guide strong { color: var(--warm); font-weight: 600; }
+    .venue-guide .fl    { color: var(--accent); font-weight: 600; }
+    .venue-note { color: var(--muted); font-size: 0.9375rem; margin-top: 6px; }
+
+    /* ─── Menu ─── */
+    .menu-heading { text-align: center; margin-bottom: 28px; }
+    .menu-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--warm);
+      margin-bottom: 4px;
+    }
+    .menu-sub {
+      font-size: 0.8125rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .menu-row   { display: flex; gap: 24px; margin-bottom: 22px; }
+    .course {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--accent);
+      min-width: 76px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+    .menu-items { display: grid; gap: 14px; }
+    .dish-ko { color: var(--warm); font-size: 1.0625rem; font-weight: 400; line-height: 1.45; }
+    .dish-en { color: var(--dim);  font-size: 0.9375rem; margin-top: 2px; line-height: 1.4; }
+
+    /* ─── Form fields ─── */
+    .field { margin-bottom: 36px; }
+    .field-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 10px;
+    }
+    .field-label .req { color: var(--accent); margin-left: 2px; }
+    .field-label .en  { opacity: 0.7; margin-left: 6px; font-weight: 400; }
+    .field-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1.5px solid var(--dim);
+      border-radius: 0;
+      color: var(--warm);
+      width: 100%;
+      padding: 12px 0;
+      font-size: 1.0625rem;
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .field-input::placeholder { color: var(--muted); font-size: 1rem; }
+    .field-input:focus { border-bottom-color: var(--accent); }
+
+    /* ─── Attendance cards ─── */
+    .attend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .attend-label { cursor: pointer; }
+    .attend-card {
+      border: 1.5px solid var(--dim);
+      padding: 22px 18px;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .attend-card:hover { border-color: var(--ink); }
+    .attend-card .card-main { font-size: 1.125rem; font-weight: 600; color: var(--warm); margin-bottom: 4px; }
+    .attend-card .card-sub  { font-size: 0.9375rem; color: var(--dim); }
+    .attend-card.active-yes { border-color: var(--accent); background: var(--cyan-dim); }
+    .attend-card.active-no  { border-color: rgba(239,68,68,0.5); background: var(--red-dim); }
+
+    /* ─── Submit ─── */
+    .btn-submit {
+      width: 100%;
+      background: var(--accent);
+      color: #06101c;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 20px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 8px;
+    }
+    .btn-submit:hover   { background: #3aafd8; }
+    .btn-submit:active  { transform: scale(0.995); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    /* ─── Success ─── */
+    .success { display: none; text-align: center; padding: 56px 0; }
+    .success-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.25rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--warm);
+      margin-bottom: 12px;
+    }
+    .success-sub { color: var(--dim); font-size: 1.0625rem; }
+
+    /* ─── Footer ─── */
+    .footer { text-align: center; margin-top: 64px; }
+    .footer-text { color: var(--dim); font-size: 0.9375rem; margin-top: 20px; }
+    .footer-text a { color: var(--accent); text-decoration: none; }
+    .footer-text a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── Header ── -->
+  <header class="header fu">
+    <p class="eyebrow">BUIDL ASIA · 2026</p>
+    <h1 class="title">Next Finance<br><em>Summit</em></h1>
+    <hr class="rule-gold" style="max-width:100px;margin:18px auto;">
+    <p class="subtitle">2026년 4월 15일(수) &nbsp;·&nbsp; 삼성역 그랜드힐 컨벤션</p>
+  </header>
+
+  <!-- ── VIP Badge ── -->
+  <div class="fu d1" style="text-align:center;margin-bottom:48px;">
+    <div class="vip-badge">
+      <span class="vip-star">✦</span>
+      <div>
+        <p class="vip-title">VIP 프라이빗 점심 식사</p>
+        <p class="vip-time">11:00 – 13:00 &nbsp;·&nbsp; 연사 및 VIP 대상</p>
+      </div>
+      <span class="vip-star">✦</span>
+    </div>
+  </div>
+
+  <!-- ── Notice ── -->
+  <div class="notice fu d2">
+    <p class="notice-head">⏰ 네트워킹 11:00부터 · 서빙 시작 11:30</p>
+    <p class="notice-body">동시 서빙으로 진행됩니다. <strong>늦지 않게 참석</strong>해 주시면 감사하겠습니다.</p>
+    <p class="notice-contact">당일 부득이한 사정으로 늦으시거나 문의 사항이 있으시면 이경은 <a href="tel:01068441031">010-6844-1031</a>로 연락 주세요.</p>
+  </div>
+
+  <!-- ── Venue ── -->
+  <div class="fu d2" style="margin-bottom:48px;">
+    <p class="section-label">📍 오시는 길 / Venue</p>
+    <div class="venue-row"><span class="venue-key">장소</span><span class="venue-val bright">그랜드힐 컨벤션</span></div>
+    <div class="venue-row"><span class="venue-key">주소</span><span class="venue-val">서울특별시 강남구 역삼로 607</span></div>
+    <div class="venue-row"><span class="venue-key">지하철</span><span class="venue-val">2호선 삼성역</span></div>
+    <hr class="rule-gold" style="margin-top:16px;">
+    <p class="venue-guide">🙋 <strong>1층 로비</strong>에 오시면 당일 스텝이 식사 장소(<span class="fl">2층</span>)로 안내해 드립니다.</p>
+    <p class="venue-note">* 본 행사장(1층)과 식사 장소(2층)가 다르니 참고 부탁드립니다.</p>
+  </div>
+
+  <hr class="rule fu d2" style="margin-bottom:48px;">
+
+  <!-- ── Menu ── -->
+  <div class="fu d3" style="margin-bottom:48px;">
+    <div class="menu-heading">
+      <p class="menu-title">오늘의 메뉴</p>
+      <p class="menu-sub">Today's Menu</p>
+    </div>
+
+    <div class="menu-row">
+      <span class="course">Appetizer</span>
+      <div class="menu-items">
+        <div><p class="dish-ko">오미자소스를 곁들인 해물 세비체</p><p class="dish-en">Seafood Ceviche with omija sauce</p></div>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <span class="course">Porridge</span>
+      <div class="menu-items">
+        <div><p class="dish-ko">영양 전복죽</p><p class="dish-en">Abalone Porridge</p></div>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <span class="course">Main</span>
+      <div class="menu-items">
+        <div><p class="dish-ko">전복 버터구이</p><p class="dish-en">Baked Abalone with garlic butter</p></div>
+        <div><p class="dish-ko">포트와인 소스를 곁들인 그랜드힐 홈메이드 떡갈비 스테이크</p><p class="dish-en">Homemade Tteokgalbi Steak with port wine sauce</p></div>
+        <div><p class="dish-ko">게살과 특제소스를 곁들인 치즈그라탕 대하구이와 구운야채, 백김치</p><p class="dish-en">Jumbo Prawn with cheese gratin crabmeat served with grilled vegetables and white kimchi</p></div>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <span class="course">Noodle</span>
+      <div class="menu-items">
+        <div><p class="dish-ko">잔치국수</p><p class="dish-en">Noodle Soup</p></div>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <span class="course">Dessert</span>
+      <div class="menu-items">
+        <div><p class="dish-ko">라즈베리 마멀레이드를 곁들인 라즈베리무스 케익</p><p class="dish-en">Raspberry Mousse Cake with raspberry marmalade</p></div>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <span class="course">Beverage</span>
+      <div class="menu-items">
+        <div><p class="dish-ko">커피 또는 차(茶)</p><p class="dish-en">Coffee or Tea</p></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule fu d3" style="margin-bottom:48px;">
+
+  <!-- ── Form ── -->
+  <div class="fu d4">
+    <form name="vip-rsvp" method="POST" data-netlify="true" id="rsvpForm">
+      <input type="hidden" name="form-name" value="vip-rsvp" />
+
+      <div class="field">
+        <label class="field-label">성함<span class="req">*</span><span class="en">/ Name</span></label>
+        <input class="field-input" type="text" name="name" required placeholder="홍길동 / Hong Gil-dong" />
+      </div>
+
+      <div class="field">
+        <label class="field-label">소속<span class="req">*</span><span class="en">/ Company</span></label>
+        <input class="field-input" type="text" name="company" required placeholder="회사명 / Company Name" />
+      </div>
+
+      <div class="field">
+        <label class="field-label">직함<span class="req">*</span><span class="en">/ Title</span></label>
+        <input class="field-input" type="text" name="title" required placeholder="대표이사 / CEO" />
+      </div>
+
+      <div class="field">
+        <label class="field-label">점심 식사 참석 여부<span class="req">*</span><span class="en">/ Lunch Attendance</span></label>
+        <div class="attend-grid">
+          <label class="attend-label">
+            <input type="radio" name="attendance" value="참석" required id="radioYes" style="display:none;">
+            <div class="attend-card" id="cardYes">
+              <p class="card-main">참석</p>
+              <p class="card-sub">Yes, I'll attend</p>
+            </div>
+          </label>
+          <label class="attend-label">
+            <input type="radio" name="attendance" value="불참" id="radioNo" style="display:none;">
+            <div class="attend-card" id="cardNo">
+              <p class="card-main">불참</p>
+              <p class="card-sub">Unable to attend</p>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">
+        RSVP 제출하기 &nbsp;/&nbsp; Submit RSVP
+      </button>
+    </form>
+
+    <div class="success" id="successMsg">
+      <hr class="rule-gold" style="max-width:80px;margin:0 auto 24px;">
+      <p class="success-title">응답이 접수되었습니다</p>
+      <p class="success-sub">4월 15일에 뵙겠습니다.</p>
+      <hr class="rule-gold" style="max-width:80px;margin:24px auto 0;">
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer fu d5">
+    <hr class="rule">
+    <p class="footer-text">
+      문의: <a href="mailto:ann@arkpoint.kr">ann@arkpoint.kr</a>
+      &nbsp;·&nbsp; ARK Point
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  // Attendance card toggle
+  document.querySelectorAll('.attend-label').forEach(label => {
+    label.addEventListener('click', () => {
+      const radio = label.querySelector('input[type="radio"]');
+      radio.checked = true;
+      document.getElementById('cardYes').classList.remove('active-yes');
+      document.getElementById('cardNo').classList.remove('active-no');
+      if (radio.id === 'radioYes') document.getElementById('cardYes').classList.add('active-yes');
+      else document.getElementById('cardNo').classList.add('active-no');
+    });
+  });
+
+  // Form submission
+  const form = document.getElementById('rsvpForm');
+  const btn  = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = '제출 중...';
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'RSVP 제출하기 / Submit RSVP';
+        alert('제출 중 오류가 발생했습니다. 다시 시도해주세요.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'RSVP 제출하기 / Submit RSVP';
+      alert('네트워크 오류가 발생했습니다.');
+    }
+  });
+</script>
+
+</body>
+</html>

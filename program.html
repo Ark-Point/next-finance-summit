@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXT FINANCE SUMMIT — Program Guide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --surface:  #0b0e17;
+      --warm:     #f5f1eb;
+      --ink:      #ddd8d0;
+      --dim:      #b8b3ab;
+      --muted:    #8e8a84;
+      --accent:   #4dbfed;
+      --gold:     #d4b278;
+      --gold-dim: rgba(212,178,120,0.18);
+      --cyan-dim: rgba(77,191,237,0.13);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      background: var(--surface);
+      color: var(--ink);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 48px 0;
+    }
+
+    /* ── Typography ── */
+    .serif { font-family: 'Cormorant Garamond', serif; }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+      color: var(--warm);
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+    }
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--warm);
+      margin-bottom: 8px;
+    }
+
+    p { color: var(--ink); margin-bottom: 12px; }
+    .sub { color: var(--dim); font-size: 0.95rem; }
+    .caption { color: var(--muted); font-size: 0.85rem; }
+
+    /* ── Dividers ── */
+    .rule {
+      height: 1px; border: none;
+      background: linear-gradient(to right, transparent, rgba(77,191,237,0.3), transparent);
+      margin: 0;
+    }
+    .rule-gold {
+      height: 1px; border: none;
+      background: linear-gradient(to right, transparent, rgba(212,178,120,0.4), transparent);
+      margin: 0;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 64px 0 48px;
+      text-align: center;
+    }
+    .hero .overline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      margin-bottom: 16px;
+    }
+    .hero .meta {
+      color: var(--dim);
+      font-size: 1rem;
+    }
+    .hero .meta strong {
+      color: var(--warm);
+      font-weight: 500;
+    }
+
+    /* ── Nav Dots ── */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+    .nav-bar a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      transition: all 0.25s;
+    }
+    .nav-bar a:hover {
+      color: var(--warm);
+      border-color: var(--gold);
+      background: var(--gold-dim);
+    }
+
+    /* ── About Card ── */
+    .about-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 28px 28px;
+    }
+    .about-card p:last-child { margin-bottom: 0; }
+
+    /* ── Sponsor Grid ── */
+    .sponsor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .sponsor-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 20px 22px;
+      transition: border-color 0.25s;
+    }
+    .sponsor-item:hover {
+      border-color: rgba(212,178,120,0.3);
+    }
+    .sponsor-name {
+      font-weight: 600;
+      color: var(--warm);
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .sponsor-desc {
+      color: var(--dim);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Session Cards ── */
+    .session-block {
+      margin-bottom: 32px;
+    }
+    .session-block:last-child { margin-bottom: 0; }
+
+    .session-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .session-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .tag-keynote {
+      background: var(--gold-dim);
+      color: var(--gold);
+    }
+    .tag-panel {
+      background: var(--cyan-dim);
+      color: var(--accent);
+    }
+
+    .session-summary {
+      background: rgba(255,255,255,0.02);
+      border-left: 2px solid var(--gold);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 8px;
+    }
+    .session-summary p { margin-bottom: 8px; color: var(--dim); font-size: 0.95rem; }
+    .session-summary p:last-child { margin-bottom: 0; }
+
+    /* ── Info Box ── */
+    .info-box {
+      background: rgba(77,191,237,0.06);
+      border: 1px solid rgba(77,191,237,0.15);
+      border-radius: 10px;
+      padding: 24px 28px;
+      text-align: center;
+    }
+    .info-box .icon { font-size: 2rem; margin-bottom: 8px; }
+    .info-box .label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .info-box .value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--warm);
+      letter-spacing: 0.04em;
+    }
+    .info-box .pw {
+      font-family: 'DM Sans', monospace;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--warm);
+      background: rgba(255,255,255,0.06);
+      padding: 6px 18px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 4px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── CTA Button ── */
+    .cta-section { text-align: center; }
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), #b8923e);
+      color: #0b0e17;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      padding: 14px 40px;
+      border-radius: 8px;
+      letter-spacing: 0.04em;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212,178,120,0.25);
+    }
+
+    .photo-btn {
+      background: linear-gradient(135deg, var(--accent), #2a8bc2);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* ── Animation ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade { animation: fadeUp .6s ease both; }
+    .d1 { animation-delay: .1s; }
+    .d2 { animation-delay: .2s; }
+    .d3 { animation-delay: .3s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .wrap { padding: 0 18px; }
+      section { padding: 36px 0; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.35rem; }
+      .sponsor-grid { grid-template-columns: 1fr; }
+      .nav-bar { gap: 8px; }
+      .nav-bar a { font-size: 0.78rem; padding: 5px 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <header class="hero wrap fade">
+    <p class="overline">BUIDL ASIA</p>
+    <h1>NEXT FINANCE SUMMIT</h1>
+    <p class="serif" style="font-size:1.2rem; color:var(--dim); font-style:italic; margin-bottom:20px;">
+      The Institutional Phase of Blockchain
+    </p>
+    <p class="meta">
+      <strong>2026. 4. 15 (Tue)</strong> &nbsp;·&nbsp; 1:00 PM – 6:00 PM<br>
+      Grand Hill Convention, Gangnam, Seoul
+    </p>
+  </header>
+
+  <hr class="rule-gold">
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav-bar wrap fade d1">
+    <a href="#about">About</a>
+    <a href="#sponsors">Sponsors</a>
+    <a href="#sessions">Sessions</a>
+    <a href="#wifi">WiFi</a>
+    <a href="#photos">Photos</a>
+    <a href="#review">Event Review</a>
+  </nav>
+
+  <hr class="rule">
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about" class="wrap fade d2">
+    <h2>About the Organizer</h2>
+
+    <div class="about-card" style="margin-bottom:16px;">
+      <h3>ARK Point / INFCL</h3>
+      <p>아크포인트는 한국 기반의 AI 네이티브 비즈니스 빌더로, 글로벌 Web3 프로젝트와 한국 시장을 연결합니다. 160개 이상의 블록체인 프로젝트를 대상으로 시장 진입, 브랜딩, PR, 커뮤니티 성장 등 실무 중심의 GTM을 수행해왔으며, Web3 마케팅 전문 브랜드 INFCL을 통해 최신 기술과 실질적인 비즈니스 성과를 연결합니다.</p>
+      <p class="sub" style="margin-top:8px; font-style:italic;">Ark Point is an AI-native business builder based in Korea, bridging the gap between global Web3 projects and the Korean market. With hands-on experience supporting over 160 blockchain projects across market entry, branding, PR, and community growth, Ark Point connects frontier technology with real business outcomes through its Web3 GTM division, INFCL.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ═══ SPONSORS ═══ -->
+  <section id="sponsors" class="wrap">
+    <h2>Sponsors</h2>
+
+    <div class="sponsor-grid">
+      <a class="sponsor-item" href="https://x.com/magic_labs" target="_blank" style="text-decoration:none;">
+        <p class="sponsor-name">Magic Labs</p>
+        <p class="sponsor-desc">@magic_labs</p>
+      </a>
+      <a class="sponsor-item" href="https://x.com/movement_xyz" target="_blank" style="text-decoration:none;">
+        <p class="sponsor-name">Movement Industries</p>
+        <p class="sponsor-desc">@movement_xyz</p>
+      </a>
+      <a class="sponsor-item" href="https://x.com/injective" target="_blank" style="text-decoration:none;">
+        <p class="sponsor-name">Injective</p>
+        <p class="sponsor-desc">@injective</p>
+      </a>
+      <a class="sponsor-item" href="https://x.com/squidrouter" target="_blank" style="text-decoration:none;">
+        <p class="sponsor-name">Squid</p>
+        <p class="sponsor-desc">@squidrouter</p>
+      </a>
+      <a class="sponsor-item" href="https://x.com/GoKiteAI" target="_blank" style="text-decoration:none;">
+        <p class="sponsor-name">Kite AI</p>
+        <p class="sponsor-desc">@GoKiteAI</p>
+      </a>
+      <a class="sponsor-item" href="https://x.com/plumenetwork" target="_blank" style="text-decoration:none;">
+        <p class="sponsor-name">Plume</p>
+        <p class="sponsor-desc">@plumenetwork</p>
+      </a>
+      <a class="sponsor-item" href="https://x.com/jito_sol" target="_blank" style="text-decoration:none;">
+        <p class="sponsor-name">Jito</p>
+        <p class="sponsor-desc">@jito_sol</p>
+      </a>
+      <a class="sponsor-item" href="https://x.com/redstone_defi" target="_blank" style="text-decoration:none;">
+        <p class="sponsor-name">RedStone</p>
+        <p class="sponsor-desc">@redstone_defi</p>
+      </a>
+    </div>
+  </section>
+
+  <hr class="rule-gold">
+
+  <!-- ═══ SESSIONS ═══ -->
+  <section id="sessions" class="wrap">
+    <h2>Session Highlights</h2>
+    <p class="sub" style="margin-bottom:28px;">각 세션의 주요 내용을 요약했습니다.</p>
+
+    <!-- Agenda 1: Stablecoins & Payments -->
+    <h3 style="color:var(--accent); margin-bottom:20px; font-size:1.05rem; letter-spacing:0.06em;">
+      AGENDA 01 — Stablecoins &amp; Payments
+    </h3>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-keynote">Keynote</span>
+        <h3 style="margin:0;">[Keynote 1 제목] — [연사명], [소속]</h3>
+      </div>
+      <div class="session-summary">
+        <p><!-- TODO: 발표 핵심 Summary -->[발표 핵심 요약 2-3문장]</p>
+      </div>
+    </div>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-panel">Panel</span>
+        <h3 style="margin:0;">[Panel 1 제목]</h3>
+      </div>
+      <p class="caption">패널: [패널리스트 이름들]</p>
+      <div class="session-summary">
+        <p><!-- TODO: 패널 핵심 Summary -->[패널 주요 논의 요약]</p>
+      </div>
+    </div>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-keynote">Keynote</span>
+        <h3 style="margin:0;">[Keynote 2 제목] — [연사명], [소속]</h3>
+      </div>
+      <div class="session-summary">
+        <p>[발표 핵심 요약 2-3문장]</p>
+      </div>
+    </div>
+
+    <hr class="rule" style="margin: 32px 0;">
+
+    <!-- Agenda 2: RWA -->
+    <h3 style="color:var(--accent); margin-bottom:20px; font-size:1.05rem; letter-spacing:0.06em;">
+      AGENDA 02 — RWA (Real World Assets)
+    </h3>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-keynote">Keynote</span>
+        <h3 style="margin:0;">[Keynote 3 제목] — [연사명], [소속]</h3>
+      </div>
+      <div class="session-summary">
+        <p>[발표 핵심 요약 2-3문장]</p>
+      </div>
+    </div>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-panel">Panel</span>
+        <h3 style="margin:0;">[Panel 2 제목]</h3>
+      </div>
+      <p class="caption">패널: [패널리스트 이름들]</p>
+      <div class="session-summary">
+        <p>[패널 주요 논의 요약]</p>
+      </div>
+    </div>
+
+    <div class="session-block">
+      <div class="session-header">
+        <span class="session-tag tag-keynote">Keynote</span>
+        <h3 style="margin:0;">[Keynote 4 제목] — [연사명], [소속]</h3>
+      </div>
+      <div class="session-summary">
+        <p>[발표 핵심 요약 2-3문장]</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ═══ WIFI ═══ -->
+  <section id="wifi" class="wrap">
+    <div class="info-box">
+      <div class="icon">📶</div>
+      <p class="label">WiFi</p>
+      <!-- TODO: WiFi SSID + 비밀번호 입력 -->
+      <p class="value">[WiFi 이름]</p>
+      <p class="pw">[비밀번호]</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ═══ PHOTOS ═══ -->
+  <section id="photos" class="wrap cta-section">
+    <h2>Event Photos</h2>
+    <p class="sub" style="margin-bottom:20px;">행사 사진은 아래에서 확인하실 수 있습니다.</p>
+    <a href="https://drive.google.com/drive/folders/1QnNgkcNc9diYDxS77Vitf88Rsa7gG-N0?usp=sharing" target="_blank" class="cta-btn photo-btn">사진 앨범 보기</a>
+  </section>
+
+  <hr class="rule-gold">
+
+  <!-- ═══ REVIEW EVENT ═══ -->
+  <section id="review" class="wrap cta-section">
+    <h2>행사 후기 이벤트</h2>
+    <p class="sub" style="margin-bottom:10px;">행사에 참석하셨다면 후기를 남겨주세요!</p>
+    <p class="caption" style="margin-bottom:24px;">추첨을 통해 소정의 선물을 드립니다.</p>
+    <a href="https://forms.gle/arw9vf2Nn1RAgdg96" target="_blank" class="cta-btn">후기 작성하기</a>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="wrap">
+    <p>Organized by <a href="#">INF CryptoLab</a> &amp; <a href="#">ARK Point</a></p>
+    <p style="margin-top:6px;">&copy; 2026 NEXT FINANCE SUMMIT</p>
+  </footer>
+
+</body>
+</html>
